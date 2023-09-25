@@ -42,4 +42,5 @@ const fs = require("fs");
   console.log("결과가 hollys_c_menu.json 파일에 저장되었습니다.");
 
   await browser.close();
+  console.log('test')
 })();
