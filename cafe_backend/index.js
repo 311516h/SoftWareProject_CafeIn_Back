@@ -96,4 +96,18 @@ app.post("/p_info", (req, res) => {
   });
 });
 
+app.post("/sb_info", (req, res) => {
+  // paik_info.json 파일을 읽어옴
+  fs.readFile("starbucks_info.json", "utf-8", (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Internal Server Error" });
+    } else {
+      // JSON 형식의 데이터 반환
+      res.setHeader("Content-Type", "application/json");
+      res.send(data);
+    }
+  });
+});
+
 app.listen(3000);
