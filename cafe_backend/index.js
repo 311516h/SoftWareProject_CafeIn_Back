@@ -27,8 +27,8 @@ app.post("/sb_menu", (req, res) => {
 });
 
 app.post("/ed_menu", (req, res) => {
-  // ediya_menu.json 파일을 읽어옴
-  fs.readFile("ediya_menu.json", "utf-8", (err, data) => {
+  // ed_menu.json 파일을 읽어옴
+  fs.readFile("ed_menu.json", "utf-8", (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).json({ error: "Internal Server Error" });
@@ -82,9 +82,11 @@ app.post("/h_menu", (req, res) => {
   });
 });
 
-app.post("/p_info", (req, res) => {
-  // paik_info.json 파일을 읽어옴
-  fs.readFile("paik_info.json", "utf-8", (err, data) => {
+// 영양성분 api
+
+app.post("/sb_info", (req, res) => {
+  // starbucks_info.json 파일을 읽어옴
+  fs.readFile("starbucks_info.json", "utf-8", (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).json({ error: "Internal Server Error" });
@@ -96,9 +98,9 @@ app.post("/p_info", (req, res) => {
   });
 });
 
-app.post("/sb_info", (req, res) => {
+app.post("/p_info", (req, res) => {
   // paik_info.json 파일을 읽어옴
-  fs.readFile("starbucks_info.json", "utf-8", (err, data) => {
+  fs.readFile("paik_info.json", "utf-8", (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).json({ error: "Internal Server Error" });
