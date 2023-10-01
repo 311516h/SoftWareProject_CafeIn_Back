@@ -31,7 +31,7 @@ const fs = require('fs');
     }
 
     const jsonData = JSON.stringify({ prodInfo: scrapedData }, null, 2);
-    const fileName = site.split('/').pop().split('.')[0] + '_info.json';
+    const fileName = site.split('/').pop().split('.')[0] + '_infozzzzz.json';
     fs.writeFileSync(fileName, jsonData);
 
     console.log(`Data from ${site} has been saved to ${fileName}`);
