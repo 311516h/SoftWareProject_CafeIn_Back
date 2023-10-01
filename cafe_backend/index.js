@@ -12,7 +12,7 @@ const port = 3000;
 //   res.send("Hello World!");
 // });
 
-app.get("/sb_menu", (req, res) => {
+app.post("/sb_menu", (req, res) => {
   // starbucks_menu.json 파일을 읽어옴
   fs.readFile("starbucks_menu.json", "utf-8", (err, data) => {
     if (err) {
@@ -26,7 +26,7 @@ app.get("/sb_menu", (req, res) => {
   });
 });
 
-app.get("/ed_menu", (req, res) => {
+app.post("/ed_menu", (req, res) => {
   // ediya_menu.json 파일을 읽어옴
   fs.readFile("ediya_menu.json", "utf-8", (err, data) => {
     if (err) {
@@ -40,7 +40,7 @@ app.get("/ed_menu", (req, res) => {
   });
 });
 
-app.get("/m_menu", (req, res) => {
+app.post("/m_menu", (req, res) => {
   // mega_menu.json 파일을 읽어옴
   fs.readFile("mega_menu.json", "utf-8", (err, data) => {
     if (err) {
@@ -54,7 +54,7 @@ app.get("/m_menu", (req, res) => {
   });
 });
 
-app.get("/p_menu", (req, res) => {
+app.post("/p_menu", (req, res) => {
   // paik_menu.json 파일을 읽어옴
   fs.readFile("paik_menu.json", "utf-8", (err, data) => {
     if (err) {
@@ -68,7 +68,7 @@ app.get("/p_menu", (req, res) => {
   });
 });
 
-app.get("/h_menu", (req, res) => {
+app.post("/h_menu", (req, res) => {
   // hollys_menu.json 파일을 읽어옴
   fs.readFile("hollys_menu.json", "utf-8", (err, data) => {
     if (err) {
@@ -82,9 +82,23 @@ app.get("/h_menu", (req, res) => {
   });
 });
 
-app.get("/p_info", (req, res) => {
+app.post("/p_info", (req, res) => {
   // paik_info.json 파일을 읽어옴
   fs.readFile("paik_info.json", "utf-8", (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Internal Server Error" });
+    } else {
+      // JSON 형식의 데이터 반환
+      res.setHeader("Content-Type", "application/json");
+      res.send(data);
+    }
+  });
+});
+
+app.post("/sb_info", (req, res) => {
+  // paik_info.json 파일을 읽어옴
+  fs.readFile("starbucks_info.json", "utf-8", (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).json({ error: "Internal Server Error" });
