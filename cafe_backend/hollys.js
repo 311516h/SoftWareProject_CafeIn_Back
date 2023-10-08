@@ -3,7 +3,7 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: "new" });
   const page = await browser.newPage();
 
   const sites = [
@@ -45,7 +45,7 @@ const fs = require("fs");
 
     // JSON 파일에 저장
     const resultJSON = JSON.stringify(products, null, 2);
-    const fileName = `hollys_menu_${site.split('/').pop().split('.')[0]}.json`;
+    const fileName = `h_menu_${site.split('/').pop().split('.')[0]}.json`;
     fs.writeFileSync(fileName, resultJSON, "utf-8");
 
     console.log(`결과가 ${fileName} 파일에 저장되었습니다.`);
