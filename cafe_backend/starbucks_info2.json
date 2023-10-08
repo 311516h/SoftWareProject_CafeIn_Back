@@ -10,14 +10,14 @@
     "caffeine": "232"
   },
   {
-    "prodName": "",
-    "text": "",
-    "volume": "",
-    "kcal": "",
-    "sat_FAT": "",
-    "sodium": "",
-    "sugars": "",
-    "caffeine": ""
+    "prodName": "나이트로 콜드 브루Nitro Cold Brew",
+    "text": "나이트로 커피 정통의 캐스케이딩과 부드러운 콜드 크레마! 부드러운 목 넘김과 완벽한 밸런스에 커피 본연의 단맛을 경험할 수 있습니다.",
+    "volume": "Tall(톨) / 355ml (12 fl oz)",
+    "kcal": "5",
+    "sat_FAT": "0",
+    "sodium": "5",
+    "sugars": "0",
+    "caffeine": "245"
   },
   {
     "prodName": "돌체 콜드 브루Dolce Cold Brew",
@@ -70,14 +70,14 @@
     "caffeine": "155"
   },
   {
-    "prodName": "",
-    "text": "",
-    "volume": "",
-    "kcal": "",
-    "sat_FAT": "",
-    "sodium": "",
-    "sugars": "",
-    "caffeine": ""
+    "prodName": "시그니처 더 블랙 콜드 브루Signature The Black Cold Brew",
+    "text": "콜드 브루 전용 원두를 차가운 물로 매장에서 직접 추출하여 부드럽고 진한 풍미의 콜드브루를 언제 어디서나 편하게 즐겨보세요 (전용 보틀 /500ml)",
+    "volume": "Bottle(보틀) / 500ml (17 fl oz)",
+    "kcal": "25",
+    "sat_FAT": "0",
+    "sodium": "50",
+    "sugars": "0",
+    "caffeine": "680"
   },
   {
     "prodName": "여수 윤슬 헤이즐넛 콜드브루Yeosu Shining Hazelnut Cold Brew",
@@ -90,14 +90,14 @@
     "caffeine": "53"
   },
   {
-    "prodName": "",
-    "text": "",
-    "volume": "",
-    "kcal": "",
-    "sat_FAT": "",
-    "sodium": "",
-    "sugars": "",
-    "caffeine": ""
+    "prodName": "오트 콜드 브루Oat Cold Brew",
+    "text": "콜드 브루의 풍미와 깔끔한 오트음료(식물성 대체유)가 어우러진 달콤 고소한 라떼.식물성 대체유를 사용해 모든 고객이 부담없이 즐길 수 있는 콜드 브루 음료",
+    "volume": "Tall(톨) / 355ml (12 fl oz)",
+    "kcal": "120",
+    "sat_FAT": "0.3",
+    "sodium": "95",
+    "sugars": "14",
+    "caffeine": "65"
   },
   {
     "prodName": "제주 비자림 콜드 브루Jeju Forest Cold Brew",
@@ -390,14 +390,14 @@
     "caffeine": "105"
   },
   {
-    "prodName": "",
-    "text": "",
-    "volume": "",
-    "kcal": "",
-    "sat_FAT": "",
-    "sodium": "",
-    "sugars": "",
-    "caffeine": ""
+    "prodName": "바닐라 빈 라떼Vanilla Bean Latte",
+    "text": "리저브만을 위한 바닐라 빈 시럽이 부드럽게 어우러진 카페 라떼",
+    "volume": "Tall(톨) / 355ml (12 fl oz)",
+    "kcal": "245",
+    "sat_FAT": "6",
+    "sodium": "150",
+    "sugars": "27",
+    "caffeine": "210"
   },
   {
     "prodName": "아이스 스타벅스 1호점 바닐라 빈 라떼Iced Starbucks 1st Store Vanilla Bean Latte",
@@ -410,14 +410,14 @@
     "caffeine": "210"
   },
   {
-    "prodName": "",
-    "text": "",
-    "volume": "",
-    "kcal": "",
-    "sat_FAT": "",
-    "sodium": "",
-    "sugars": "",
-    "caffeine": ""
+    "prodName": "아이스 스타벅스 1호점 카페 라떼Iced Starbucks 1st Store Cafe Latte",
+    "text": "한국 스타벅스 1호점인 이대R점을 상징하는 리저브 카페 라떼. 시애틀 1호점을 기념하는 '파이크 플레이스 로스트'VIA와 번트 카라멜 파우더로 만든 리저브 로고는 부드러운 밀크 콜드폼에 달콤쌉쌀한 풍미를 선사.",
+    "volume": "Tall(톨) / 355ml (12 fl oz)",
+    "kcal": "117",
+    "sat_FAT": "3.2",
+    "sodium": "100",
+    "sugars": "9",
+    "caffeine": "210"
   },
   {
     "prodName": "아이스 스타벅스 돌체 라떼Iced Starbucks Dolce Latte",

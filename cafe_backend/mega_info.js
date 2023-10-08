@@ -28,8 +28,8 @@ const fs = require('fs');
       // 필요한 데이터 추출
       $('.cont_text_wrap li .cont_gallery_list_box').each((index, element) => {
         const prodName = $(element).find('b').text();
-        const prodImage = $(element).find('img').attr('src');
-        products.push({ prodName, prodImage });
+        const text = $(element).find('.text.text2').text().trim(); // trim()을 사용하여 앞뒤 공백 제거
+        products.push({ prodName, text });
       });
 
       // "board_page_next" 클래스를 가진 링크가 없으면 루프 종료
@@ -51,8 +51,8 @@ const fs = require('fs');
     console.error('페이지 이동 중 오류 발생:', error);
   } finally {
     // 결과 JSON 파일에 저장
-    fs.writeFileSync('mega_menu.json', JSON.stringify(products, null, 2), 'utf-8');
-    console.log('모든 페이지의 결과가 mega_menu.json 파일에 저장되었습니다.');
+    fs.writeFileSync('mega_info.json', JSON.stringify(products, null, 2), 'utf-8');
+    console.log('모든 페이지의 결과가 mega_info.json 파일에 저장되었습니다.');
     await browser.close();
   }
 })();
