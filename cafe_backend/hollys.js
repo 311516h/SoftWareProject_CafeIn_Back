@@ -4,43 +4,52 @@ const fs = require("fs");
 
 (async () => {
   const browser = await puppeteer.launch({ headless: "new" });
-
   const page = await browser.newPage();
 
-  await page.goto("https://www.hollys.co.kr/menu/espresso.do");
+  const sites = [
+    "https://www.hollys.co.kr/menu/espresso.do",
+    "https://www.hollys.co.kr/menu/signature.do",
+    "https://www.hollys.co.kr/menu/hollyccino.do",
+    "https://www.hollys.co.kr/menu/juice.do",
+    "https://www.hollys.co.kr/menu/tea.do"
+  ];
 
-  // 페이지 내용 가져오기
-  const html = await page.content();
+  for (const site of sites) {
+    await page.goto(site);
 
-  // 필요한 데이터 추출
-  const products = [];
+    // 페이지 내용 가져오기
+    const html = await page.content();
 
-  const $ = cheerio.load(html);
+    // 필요한 데이터 추출
+    const products = [];
 
-  $(".content .menu_list01.mar_t_40 li a").each((index, element) => {
-    // prodName에서 HTML 태그 제거 및 <br> 태그를 공백으로 처리
-    const prodName = $(element)
-      .find("img")
-      .attr("alt")
-      .replace(/<[^>]*>?/gm, " ")
-      .trim();
+    const $ = cheerio.load(html);
 
-    let prodImage = $(element).find("img").attr("src");
+    $(".content .menu_list01.mar_t_40 li a").each((index, element) => {
+      // prodName에서 HTML 태그 제거 및 <br> 태그를 공백으로 처리
+      const prodName = $(element)
+        .find("img")
+        .attr("alt")
+        .replace(/<[^>]*>?/gm, " ")
+        .trim();
 
-    // prodImage에서 불필요한 // 제거
-    prodImage = prodImage.replace(/^\/\//, "https://");
+      let prodImage = $(element).find("img").attr("src");
 
-    if (prodName && prodImage) {
-      products.push({ prodName, prodImage });
-    }
-  });
+      // prodImage에서 불필요한 // 제거
+      prodImage = prodImage.replace(/^\/\//, "https://");
 
-  // JSON 파일에 저장
-  const resultJSON = JSON.stringify(products, null, 2);
-  fs.writeFileSync("hollys_c_menu.json", resultJSON, "utf-8");
+      if (prodName && prodImage) {
+        products.push({ prodName, prodImage });
+      }
+    });
 
-  console.log("결과가 hollys_c_menu.json 파일에 저장되었습니다.");
+    // JSON 파일에 저장
+    const resultJSON = JSON.stringify(products, null, 2);
+    const fileName = `h_menu_${site.split('/').pop().split('.')[0]}.json`;
+    fs.writeFileSync(fileName, resultJSON, "utf-8");
+
+    console.log(`결과가 ${fileName} 파일에 저장되었습니다.`);
+  }
 
   await browser.close();
-  console.log('test')
 })();

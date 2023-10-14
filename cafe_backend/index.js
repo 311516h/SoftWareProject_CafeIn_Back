@@ -27,8 +27,8 @@ app.post("/sb_menu", (req, res) => {
 });
 
 app.post("/ed_menu", (req, res) => {
-  // ediya_menu.json 파일을 읽어옴
-  fs.readFile("ediya_menu.json", "utf-8", (err, data) => {
+  // ed_menu.json 파일을 읽어옴
+  fs.readFile("ed_menu.json", "utf-8", (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).json({ error: "Internal Server Error" });
@@ -82,6 +82,36 @@ app.post("/h_menu", (req, res) => {
   });
 });
 
+// 영양성분 api
+
+app.post("/sb_info", (req, res) => {
+  // starbucks_info.json 파일을 읽어옴
+  fs.readFile("starbucks_info2.json", "utf-8", (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Internal Server Error" });
+    } else {
+      // JSON 형식의 데이터 반환
+      res.setHeader("Content-Type", "application/json");
+      res.send(data);
+    }
+  });
+});
+
+app.post("/ed_info", (req, res) => {
+  // starbucks_info.json 파일을 읽어옴
+  fs.readFile("ed_info.json", "utf-8", (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Internal Server Error" });
+    } else {
+      // JSON 형식의 데이터 반환
+      res.setHeader("Content-Type", "application/json");
+      res.send(data);
+    }
+  });
+});
+
 app.post("/p_info", (req, res) => {
   // paik_info.json 파일을 읽어옴
   fs.readFile("paik_info.json", "utf-8", (err, data) => {
@@ -96,9 +126,23 @@ app.post("/p_info", (req, res) => {
   });
 });
 
-app.post("/sb_info", (req, res) => {
-  // paik_info.json 파일을 읽어옴
-  fs.readFile("starbucks_info.json", "utf-8", (err, data) => {
+app.post("/m_info", (req, res) => {
+  // mega_info.json 파일을 읽어옴
+  fs.readFile("mega_info.json", "utf-8", (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Internal Server Error" });
+    } else {
+      // JSON 형식의 데이터 반환
+      res.setHeader("Content-Type", "application/json");
+      res.send(data);
+    }
+  });
+});
+
+app.post("/h_info", (req, res) => {
+  // espresso_info.json 파일을 읽어옴
+  fs.readFile("hollys_info.json", "utf-8", (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).json({ error: "Internal Server Error" });

@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: "new" }); // Specify headless mode as "new"
+  const browser = await puppeteer.launch({ headless: "new" });
   const page = await browser.newPage();
   await page.goto("https://www.starbucks.co.kr/menu/drink_list.do");
 
@@ -25,9 +25,7 @@ const fs = require("fs");
     );
 
     const productInfo = await page.evaluate(() => {
-      const text = document.querySelector(
-        ".myAssignZone p.t1"
-      ).textContent;
+      const text = document.querySelector(".myAssignZone p.t1").textContent;
       const volume = document.querySelector(
         ".product_info_head #product_info01"
       ).textContent;
@@ -37,15 +35,15 @@ const fs = require("fs");
       const sat_FAT = document.querySelector(
         ".product_info_content .sat_FAT dd"
       ).textContent;
-    //   const protein = document.querySelector(
-    //     ".product_info_content .protein dd"
-    //   ).textContent;
-    //   const fat = document.querySelector(
-    //     ".product_info_content .fat dd"
-    //   ).textContent;
-    //   const trans_FAT = document.querySelector(
-    //     ".product_info_content .trans_FAT dd"
-    //   ).textContent;
+      //   const protein = document.querySelector(
+      //     ".product_info_content .protein dd"
+      //   ).textContent;
+      //   const fat = document.querySelector(
+      //     ".product_info_content .fat dd"
+      //   ).textContent;
+      //   const trans_FAT = document.querySelector(
+      //     ".product_info_content .trans_FAT dd"
+      //   ).textContent;
       const sodium = document.querySelector(
         ".product_info_content .sodium dd"
       ).textContent;
@@ -55,12 +53,12 @@ const fs = require("fs");
       const caffeine = document.querySelector(
         ".product_info_content .caffeine dd"
       ).textContent;
-    //   const cholesterol = document.querySelector(
-    //     ".product_info_content .cholesterol dd"
-    //   ).textContent;
-    //   const chabo = document.querySelector(
-    //     ".product_info_content .chabo dd"
-    //   ).textContent;
+      //   const cholesterol = document.querySelector(
+      //     ".product_info_content .cholesterol dd"
+      //   ).textContent;
+      //   const chabo = document.querySelector(
+      //     ".product_info_content .chabo dd"
+      //   ).textContent;
 
       return {
         text,
@@ -80,8 +78,8 @@ const fs = require("fs");
 
     // Create an object to store the data
     const container = {
-    //   cd,
-    //   name,
+      //   cd,
+      // name,
       productInfo,
     };
 
@@ -93,9 +91,9 @@ const fs = require("fs");
   const resultJSON = JSON.stringify(result, null, 2);
 
   // Save data to a .json file
-  fs.writeFile("starbucks_info.json", resultJSON, (err) => {
+  fs.writeFile("starbucks_info2.json", resultJSON, (err) => {
     if (err) throw err;
-    console.log("starbucks_info.json 파일에 저장되었습니다.");
+    console.log("starbucks_info2.json 파일에 저장되었습니다.");
   });
 
   await browser.close();
